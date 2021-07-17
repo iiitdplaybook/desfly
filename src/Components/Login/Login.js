@@ -1,22 +1,22 @@
 /** @format */
-import React from 'react';
-import './Login.css';
-import firebase from 'firebase';
-import Creators from '../Footer/Creators';
-import TeamMembers from '../Footer/Team';
-import fire from '../../fire';
-import { auth, provider } from '../../fire';
-import { Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import Testimonials from '../Testimonies/TestimonialsName';
-import FadeIn from './../Utils/FadeIn';
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import Footer from '../Footer/Footer';
+import React from "react";
+import "./Login.css";
+import firebase from "firebase";
+import Creators from "../Footer/Creators";
+import TeamMembers from "../Footer/Team";
+import fire from "../../fire";
+import { auth, provider } from "../../fire";
+import { Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import Testimonials from "../Testimonies/TestimonialsName";
+import FadeIn from "./../Utils/FadeIn";
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const logo =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/Logo.png';
+  "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/Logo.png";
 
 function Login() {
   // const contri = [
@@ -46,7 +46,7 @@ function Login() {
   function loadUser(user) {
     const firestoreUser = firebase
       .firestore()
-      .collection('users')
+      .collection("users")
       .doc(user.uid);
     const data = firestoreUser.get().then(function (doc) {
       if (!doc.exists) {
@@ -66,9 +66,9 @@ function Login() {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        localStorage.setItem('isSignedIn', true);
+        localStorage.setItem("isSignedIn", true);
         loadUser(result.user);
-        history.push('/homepage');
+        history.push("/homepage");
       })
       .catch((error) => {});
   };
@@ -86,27 +86,29 @@ function Login() {
   const classes = useStyles();
 
   return (
-    <div className='login'>
-      <div className='login__logo'>
-        <img id='logo' src={logo} />
-        <Link className='login__link' to={{ pathname: "https://forms.gle/beJjnyQ9rkTTBGtq9" }} target="_blank">
-          <Button className='login__form'>
-            Playbook for your college?
-          </Button>
+    <div className="login">
+      <div className="login__logo">
+        <img id="logo" src={logo} />
+        <Link
+          className="login__link"
+          to={{ pathname: "https://forms.gle/beJjnyQ9rkTTBGtq9" }}
+          target="_blank"
+        >
+          <Button className="login__form">Playbook for your college?</Button>
         </Link>
       </div>
 
-      <div className='login__action'>
-        <div className='login__heading'>
-          <h1 className='textCard2'>Student Playbook</h1>
-          <h5 className='textCard3'>For the students, by the students</h5>
+      <div className="login__action">
+        <div className="login__heading">
+          <h1 className="textCard2">Design Flywheel</h1>
+          <h5 className="textCard3">For the students, by the students</h5>
         </div>
 
-        <div className='login__buttons'>
-          <Button id='signIn' onClick={signIn}>
+        <div className="login__buttons">
+          <Button id="signIn" onClick={signIn}>
             Sign in with IIITD Mail
           </Button>
-          <Button id='guest' component={Link} to={'/homepage'}>
+          <Button id="guest" component={Link} to={"/homepage"}>
             {/* <Button id="guest" component={Link} to={"/"}> */}
             Take a Sneak Peek
           </Button>
