@@ -1,8 +1,62 @@
 .login {
   display: flex;
   flex-direction: column;
-  background: white;
-  height: 60vh;
+  background: black;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  z-index: 0;
+  height: 30vh;
+  width: 50vw;
+  top: 30%;
+  right: 30%;
+  border-radius: 100%;
+  animation: gradient 30s ease infinite;
+  filter: blur(300px);
+  background: url("../../Assets/gradientBg.png") center;
+  -webkit-animation: myOrbit 40s linear infinite; /* Chrome, Safari 5 */
+  -moz-animation: myOrbit 40s linear infinite; /* Firefox 5-15 */
+  -o-animation: myOrbit 40s linear infinite; /* Opera 12+ */
+  animation: myOrbit 50s linear infinite;
+}
+
+@-webkit-keyframes myOrbit {
+  from {
+    -webkit-transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+@-moz-keyframes myOrbit {
+  from {
+    -moz-transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+@-o-keyframes myOrbit {
+  from {
+    -o-transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+@keyframes myOrbit {
+  from {
+    transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
 }
 
 .login__logo {
@@ -10,11 +64,10 @@
   justify-content: space-between;
 }
 
-#logo
-{
-  height: fit-content;
+#logo {
+  height: 30px;
+  width: 30px;
 }
-
 
 #login__form {
   margin: 2%;
@@ -30,7 +83,7 @@ h5 {
 
 .login__action {
   position: relative;
-  top: 40%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -72,16 +125,25 @@ h5 {
 }
 
 .login__form {
-  border: 2px solid #4a9bdb !important;
-  color: #4a9bdb !important;
+  border: 2px solid #855bfa !important;
+  color: #855bfa !important;
   font-weight: 600 !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .login__form:hover {
   color: #ffffff !important;
-  background-color: #4a9bdb !important;
-  font-family: 'Poppins', sans-serif !important;
+  background-color: #855bfa !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.login_footer {
+  width: 100%;
+  text-align: center;
+  /* color: #fff; */
+  bottom: 2%;
+  font-size: 13px;
+  position: absolute;
 }
 
 .testi {
@@ -99,13 +161,17 @@ a {
 
 #signIn {
   /* background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%); */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ffa3da, #c48fef, #855bfa); */
+  background: url("../../Assets/gradientBg.png") center;
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  color: transparent;
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
+  /* animation: gradient 30s ease infinite; */
   padding: 1%;
   padding-left: 3%;
   padding-right: 3%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: white;
   transition: ease-in-out 0.3s;
@@ -133,7 +199,7 @@ a {
   padding: 1%;
   padding-left: 3%;
   padding-right: 3%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
   transition: ease-in-out 0.3s;
@@ -144,35 +210,46 @@ a {
 }
 
 .textCard2 {
-  background: -webkit-linear-gradient(
+  /* background: -webkit-linear-gradient(
     -45deg,
     #ee7752,
     #e73c7e,
     #23a6d5,
     #23d5ab
-  );
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  ); */
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  /* background: linear-gradient(-45deg, #4b24e1, #8d87fd, #ffc1d4);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-  font-size: 4.5em;
+  -webkit-text-fill-color: transparent; */
+  /* background-size: 400% 400%; */
+  /* animation: gradient 30s ease infinite; */
+  font-size: 4.7em;
+  background: url("../../Assets/gradientBg.png") center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
 }
 
 .textCard3 {
-  background: -webkit-linear-gradient(
+  /* background: -webkit-linear-gradient(
     -45deg,
     #ee7752,
     #e73c7e,
     #23a6d5,
     #23d5ab
-  );
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  ); */
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  /* background: linear-gradient(-45deg, #4b24e1, #8d87fd, #ffc1d4);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-  font-size: 1.5em;
+  -webkit-text-fill-color: transparent; */
+  /* background-size: 400% 400%; */
+  /* animation: gradient 30s ease infinite; */
+  font-size: 1.6em;
+  background: url("../../Assets/gradientBg.png") center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @media only screen and (max-width: 500px) {
@@ -229,5 +306,11 @@ a {
     padding: 3%;
     padding-left: 5%;
     padding-right: 5%;
+  }
+
+  .circle {
+    top: 40%;
+    filter: blur(200px);
+    animation: none;
   }
 }

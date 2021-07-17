@@ -16,7 +16,7 @@ import { useHistory } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 const logo =
-  "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/Logo.png";
+  "https://cdn.statically.io/gh/iiitdplaybook/desfly/86d7435f/src/login_bg.png";
 
 function Login() {
   // const contri = [
@@ -83,35 +83,44 @@ function Login() {
     },
   });
 
-  const classes = useStyles();
-
   return (
     <div className="login">
+      <div className="circle"></div>
       <div className="login__logo">
         <img id="logo" src={logo} />
         <Link
           className="login__link"
-          to={{ pathname: "https://forms.gle/beJjnyQ9rkTTBGtq9" }}
+          to={{
+            pathname:
+              "https://twitter.com/imkshitij16/status/1413888823163899907?s=20",
+          }}
           target="_blank"
         >
-          <Button className="login__form">Playbook for your college?</Button>
+          <Button className="login__form">Huh?</Button>
         </Link>
       </div>
 
       <div className="login__action">
         <div className="login__heading">
           <h1 className="textCard2">Design Flywheel</h1>
-          <h5 className="textCard3">For the students, by the students</h5>
+          <h5 className="textCard3">Zero to One in Design</h5>
         </div>
 
         <div className="login__buttons">
-          <Button id="signIn" onClick={signIn}>
-            Sign in with IIITD Mail
+          <Button
+            id="signIn"
+            onClick={() =>
+              window.open(
+                "https://8rftwvu76it.typeform.com/to/dVbq0DLq",
+                "_blank"
+              )
+            }
+          >
+            <i class="fa fa-lock"></i>&nbsp; Get free access
           </Button>
-          <Button id="guest" component={Link} to={"/homepage"}>
-            {/* <Button id="guest" component={Link} to={"/"}> */}
+          {/* <Button id="guest" component={Link} to={"/homepage"}>
             Take a Sneak Peek
-          </Button>
+          </Button> */}
           {/* Don't delete
               <Player
                 autoplay
@@ -121,6 +130,10 @@ function Login() {
               >
               </Player> */}
         </div>
+      </div>
+
+      <div className="login_footer" style={{ color: "#3d3d3d" }}>
+        Created with Playbook &copy; 2021
       </div>
     </div>
   );

@@ -1,49 +1,48 @@
-.popup{
+.popup {
   display: none;
   position: fixed;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-
-.app{
-    background-image: url('login_bg.jpeg');
-    /* height: 100vh; */
-    width: 100vw;
-    font-family: 'Poppins', sans-serif; 
-    overflow-x: hidden;   
+.app {
+  background-image: url("login_bg.png");
+  /* height: 100vh; */
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
-#logo{
-    margin: 2%;
-    width: 7vw;
-    z-index: 500;
+#logo {
+  margin: 2%;
+  width: 7vw;
+  z-index: 500;
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 25px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 @media only screen and (max-width: 500px) {
-    #logo{
-        margin: 5%;
-        width: 20vw;
-    }
+  #logo {
+    margin: 5%;
+    width: 20vw;
+  }
 }
