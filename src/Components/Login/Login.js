@@ -116,7 +116,7 @@ function Login() {
               )
             }
           >
-            <i class="fa fa-lock"></i>&nbsp; Get free access
+            <i class="fa fa-lock"></i>&nbsp; Join the waitlist
           </Button>
           {/* <Button id="guest" component={Link} to={"/homepage"}>
             Take a Sneak Peek
