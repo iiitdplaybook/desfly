@@ -103,7 +103,7 @@ function Login() {
       <div className="login__action">
         <div className="login__heading">
           <h1 className="textCard2">Design Flywheel</h1>
-          <h5 className="textCard3">Zero to One in Design</h5>
+          <h5 className="textCard3">Zero to One in UI/UX Design</h5>
         </div>
 
         <div className="login__buttons">

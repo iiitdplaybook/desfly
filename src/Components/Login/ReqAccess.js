@@ -1,23 +1,32 @@
 import React from "react";
-import "./ReqAccess.css";
+import * as typeformEmbed from "@typeform/embed";
 
-function ReqAccess() {
-  return (
-    <div>
-      <iframe
-        id="typeform-full"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allow="camera; microphone; autoplay; encrypted-media;"
-        src="https://form.typeform.com/to/dVbq0DLq?typeform-medium=embed-snippet"
-      ></iframe>{" "}
-      <script
-        type="text/javascript"
-        src="https://embed.typeform.com/embed.js"
-      ></script>
-    </div>
-  );
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    this.el = null;
+  }
+  componentDidMount() {
+    if (this.el) {
+      typeformEmbed.makeWidget(
+        this.el,
+        "https://8rftwvu76it.typeform.com/to/dVbq0DLq",
+        {
+          hideFooter: true,
+          hideHeaders: true,
+          opacity: 0,
+        }
+      );
+    }
+  }
+  render() {
+    return (
+      <div
+        ref={(el) => (this.el = el)}
+        style={{ width: "100%", height: "300px" }}
+      />
+    );
+  }
 }
 
-export default ReqAccess;
+export default Form;
