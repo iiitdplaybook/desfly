@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Card,
   CardActionArea,
@@ -7,20 +7,20 @@ import {
   Button,
   Typography,
   CardMedia,
-} from '@material-ui/core';
-import { Link } from 'react-router-dom';
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
 
-import { makeStyles } from '@material-ui/core/styles';
-import './ExploreCards.css';
-import Tilt from 'react-parallax-tilt';
+import { makeStyles } from "@material-ui/core/styles";
+import "./ExploreCards.css";
+import Tilt from "react-parallax-tilt";
 
-import { toast } from 'react-toastify';
-import '../../../node_modules/react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "../../../node_modules/react-toastify/dist/ReactToastify.css";
 
 function ExploreCards(exploreCardInfo) {
   toast.configure();
   const notify = () =>
-    toast.info('Sign in with IIITD mail to access', {
+    toast.info("Locked. Sign up to access", {
       draggablePercent: 30,
       autoClose: 2500,
     });
@@ -38,26 +38,26 @@ function ExploreCards(exploreCardInfo) {
   let opacity;
   let guestFilter;
 
-  if (exploreCardInfo['title']) {
-    gradientColor_1 = exploreCardInfo['gradientColor_1'];
-    gradientColor_2 = exploreCardInfo['gradientColor_2'];
-    title = exploreCardInfo['title'];
-    n_testimonies = exploreCardInfo['n_testimonies'];
-    reading_time = exploreCardInfo['reading_time'];
-    image = exploreCardInfo['image'];
-    pathLink = exploreCardInfo['pathLink'];
-    opacity = exploreCardInfo['opacity'];
-    guestFilter = exploreCardInfo['guestFilter'];
+  if (exploreCardInfo["title"]) {
+    gradientColor_1 = exploreCardInfo["gradientColor_1"];
+    gradientColor_2 = exploreCardInfo["gradientColor_2"];
+    title = exploreCardInfo["title"];
+    n_testimonies = exploreCardInfo["n_testimonies"];
+    reading_time = exploreCardInfo["reading_time"];
+    image = exploreCardInfo["image"];
+    pathLink = exploreCardInfo["pathLink"];
+    opacity = exploreCardInfo["opacity"];
+    guestFilter = exploreCardInfo["guestFilter"];
   } else {
-    gradientColor_1 = '#e66465';
-    gradientColor_2 = '#9198e5';
-    title = 'No Title';
-    n_testimonies = 'N.A.';
-    reading_time = 'N.A.';
+    gradientColor_1 = "#e66465";
+    gradientColor_2 = "#9198e5";
+    title = "No Title";
+    n_testimonies = "N.A.";
+    reading_time = "N.A.";
     image =
-      'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/TimeManagement.svg';
-    pathLink = 'explore';
-    opacity = '1';
+      "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/TimeManagement.svg";
+    pathLink = "explore";
+    opacity = "1";
     guestFilter = false;
   }
 
@@ -68,34 +68,34 @@ function ExploreCards(exploreCardInfo) {
       maxHeight: cardHeight,
       background: `linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
       borderRadius: 10,
-      opacity: guestFilter ? '.3' : `${opacity}`,
-      filter: guestFilter ? 'blur(3px)' : 'none',
+      opacity: guestFilter ? ".3" : `${opacity}`,
+      filter: guestFilter ? " grayscale(1)" : "none",
     },
     actionArea: {
       width: cardWidth,
       height: cardHeight,
     },
     link: {
-      margin: '0%',
+      margin: "0%",
     },
     media: {
       maxWidth: cardWidth,
       minHeight: 120,
-      margin: '10%',
-      marginBottom: '0%',
+      margin: "10%",
+      marginBottom: "0%",
     },
     title: {
       fontSize: 20,
-      fontFamily: 'Poppins',
-      fontWeight: 'bold',
-      textAlign: 'center',
-      color: '#ffffff',
+      fontFamily: "Poppins",
+      fontWeight: "bold",
+      textAlign: "center",
+      color: "#ffffff",
     },
     info: {
       fontSize: 12,
-      textAlign: 'center',
-      margin: '5%',
-      color: '#e6e6e6',
+      textAlign: "center",
+      margin: "5%",
+      color: "#e6e6e6",
     },
   });
   const classes = useStyles();
@@ -104,23 +104,25 @@ function ExploreCards(exploreCardInfo) {
       <Card className={classes.root}>
         <Link
           className={classes.link}
-          to={!guestFilter ? `/${pathLink}` : '/explore'}
+          to={!guestFilter ? `/${pathLink}` : "/explore"}
         >
           <CardActionArea
             className={classes.actionArea}
-            onClick={!guestFilter ? '' : notify}
+            onClick={!guestFilter ? "" : notify}
           >
             <CardMedia className={classes.media} image={image} title={title} />
 
             <CardContent>
               <Typography
                 className={classes.title}
-                style={{ whiteSpace: 'pre-line' }}
+                style={{ whiteSpace: "pre-line" }}
               >
                 {title}
               </Typography>
-              <Typography className={classes.info} color='textSecondary'>
-                {n_testimonies} Testimonies | {reading_time} min
+              <Typography className={classes.info} color="textSecondary">
+                {{ opacity } === "1"
+                  ? `${n_testimonies} Testimonies | ${reading_time} min`
+                  : "Coming soon"}
               </Typography>
             </CardContent>
           </CardActionArea>

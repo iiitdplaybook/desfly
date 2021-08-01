@@ -1,5 +1,5 @@
 /** @format */
-import "./Explore.css";
+import "./Course.css";
 import React, { useState } from "react";
 import { Button, GridList, GridListTile } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -75,7 +75,8 @@ function Explore() {
         {clickedButton === 1 ? (
           <div className="cardsDiv">{itemCards["allCards"]}</div>
         ) : (
-          <div className="cardsDiv">{itemCards["recommendedCards"]}</div>
+          clickedButton ===
+          2(<div className="cardsDiv">{itemCards["recommendedCards"]}</div>)
         )}
         {/* //  : (
         //   <div className='cardsDiv'>{itemCards['favCards']}</div>

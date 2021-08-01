@@ -54,14 +54,16 @@ function App() {
   );
   const QnA = React.lazy(() => import("./Components/QnA/QnA"));
 
+  const Course = React.lazy(() => import("./Components/Course/Course"));
+
   toast.configure();
   const notify = () =>
-    toast.info("Sign in with IIITD mail to access", {
+    toast.info("Locked. Sign up to access", {
       draggablePercent: 30,
     });
 
   function showError() {
-    toast.error("Sign in with IIITD mail to access");
+    toast.error("Locked. Sign up to access");
   }
 
   useEffect(() => {
@@ -224,6 +226,13 @@ function App() {
                     <Route path="/contribute/testimonies">
                       <Suspense fallback={<Spinner />}>
                         <TestimoniesForm />
+                      </Suspense>
+                    </Route>
+                    <Route path="/course">
+                      <Suspense fallback={<Spinner />}>
+                        <div className="app__body">
+                          <Course />
+                        </div>
                       </Suspense>
                     </Route>
                     <Route path="/">

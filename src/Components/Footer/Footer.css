@@ -1,5 +1,7 @@
 #footer {
-  background: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  /* background: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%); */
+  /* background-image: ; */
+  /* background-color: #fafafa; */
   position: relative;
   left: 0;
   bottom: 0;
@@ -28,6 +30,7 @@
   text-align: center;
   width: 100vw;
   margin-left: -2%;
+  margin-bottom: 5%;
 }
 
 .divider {
@@ -35,7 +38,7 @@
   width: 80%;
   text-align: left;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -45,6 +48,11 @@
 
 .support-us {
   text-align: left;
+  padding: 1%;
+}
+
+.contribute {
+  padding: 1%;
 }
 
 .footerBtn {
@@ -69,7 +77,7 @@
 
 .buymeacoffeelogo {
   height: 20px;
-  margin-right: 1%;
+  margin-right: 4%;
 }
 
 .defaultClick {

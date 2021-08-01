@@ -6,10 +6,7 @@ import Creators from "../Footer/Creators";
 import TeamMembers from "../Footer/Team";
 import fire from "../../fire";
 import { auth, provider } from "../../fire";
-import { useStateValue } from "../../StateProvider";
-// import { auth } from "../../fire";
 import { Button } from "@material-ui/core";
-import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Testimonials from "../Testimonies/TestimonialsName";
 import FadeIn from "./../Utils/FadeIn";
@@ -17,8 +14,6 @@ import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Footer from "../Footer/Footer";
-
-import { ToastContainer, toast } from "react-toastify";
 
 const logo =
   "https://cdn.statically.io/gh/iiitdplaybook/desfly/86d7435f/src/login_bg.png";
@@ -31,7 +26,6 @@ function Login() {
   // ];
 
   const [contri, setcontri] = React.useState([]);
-  const [emails, setEmails] = useState([]);
 
   // React.useEffect(()=>{
   //   const unsub = fire.firestore().collection('Testimonies').where("isApproved", "==", true).onSnapshot(snapshot =>{
@@ -72,51 +66,12 @@ function Login() {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        // history.push("/homepage");
-        // console.log(result.user.email);
-        if (emails.includes(result.user.email)) {
-          // console.log("Hell yeah");
-          // console.log(result.user.email);
-          localStorage.setItem("isSignedIn", true);
-          loadUser(result.user);
-          history.push("/homepage");
-        } else {
-          // console.log("God damn");
-          // history.push("/");
-          // localStorage.setItem("isSignedIn", false);
-          toast.configure();
-          const notify = () =>
-            toast.info("You do not have access.", {
-              draggablePercent: 30,
-            });
-          notify();
-          return;
-        }
+        localStorage.setItem("isSignedIn", true);
+        loadUser(result.user);
+        history.push("/homepage");
       })
       .catch((error) => {});
   };
-
-  const getEmails = async () => {
-    var emails = [];
-
-    let emailsRef = firebase.database().ref("Emails");
-    await emailsRef.once("value", (snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        const temp = childSnapshot.val().email;
-        emails.push(temp);
-      });
-    });
-
-    // console.log("Emails");
-    // console.log(emails);
-
-    setEmails(emails);
-  };
-
-  useEffect(() => {
-    getEmails();
-    return () => {};
-  }, []);
 
   const useStyles = makeStyles({
     root: {
@@ -148,16 +103,24 @@ function Login() {
       <div className="login__action">
         <div className="login__heading">
           <h1 className="textCard2">Design Flywheel</h1>
-          <h5 className="textCard3">Zero to One in UI/UX Design</h5>
+          <h5 className="textCard3">Zero to One in Design</h5>
         </div>
 
         <div className="login__buttons">
-          <Button id="signIn" onClick={signIn}>
-            <i class="fa fa-unlock"></i>&nbsp; Sign up using Gmail
+          <Button
+            id="signIn"
+            onClick={() =>
+              window.open(
+                "https://8rftwvu76it.typeform.com/to/dVbq0DLq",
+                "_blank"
+              )
+            }
+          >
+            <i class="fa fa-lock"></i>&nbsp; Get free access
           </Button>
-          <Button id="guest" component={Link} to={"/homepage"}>
+          {/* <Button id="guest" component={Link} to={"/homepage"}>
             Take a Sneak Peek
-          </Button>
+          </Button> */}
           {/* Don't delete
               <Player
                 autoplay

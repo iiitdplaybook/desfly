@@ -1,4 +1,4 @@
-@import 'react-vertical-timeline-component/style.min.css';
+@import "react-vertical-timeline-component/style.min.css";
 body {
   background: white;
 }
@@ -7,8 +7,11 @@ body {
   border: 2px solid #ffffff !important;
   color: #ffffff !important;
   font-weight: 800 !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   margin-top: 2% !important;
+  /* margin-bottom: 0% !important; */
+  position: absolute !important;
+  bottom: 5%;
 }
 
 canvas {
@@ -24,7 +27,7 @@ canvas {
   margin-top: 0%;
   z-index: -1;
   position: relative;
-  background-image: url('../../Assets/homewallpaper.svg');
+  background-image: url("../../Assets/homeWallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -81,11 +84,11 @@ canvas {
 }
 
 .fp-viewing-1 #fp-nav ul li a span {
-  background: #23a6d5 !important;
+  background: #5d26e3 !important;
 }
 
 .fp-viewing-1 #fp-nav ul li .fp-tooltip {
-  color: #23a6d5 !important;
+  color: #5d26e3 !important;
 }
 
 .fp-section {
