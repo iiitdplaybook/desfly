@@ -11,13 +11,12 @@ import {
 import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
-import "./ExploreCards.css";
 import Tilt from "react-parallax-tilt";
 
 import { toast } from "react-toastify";
 import "../../../node_modules/react-toastify/dist/ReactToastify.css";
 
-function ExploreCards(exploreCardInfo) {
+function CourseCards(exploreCardInfo) {
   toast.configure();
   const notify = () =>
     toast.info("Locked. Sign up to access", {
@@ -26,7 +25,7 @@ function ExploreCards(exploreCardInfo) {
     });
 
   const cardHeight = 280;
-  const cardWidth = cardHeight * (2.4 / 3);
+  const cardWidth = cardHeight * (1.2);
 
   let gradientColor_1;
   let gradientColor_2;
@@ -79,55 +78,52 @@ function ExploreCards(exploreCardInfo) {
       margin: "0%",
     },
     media: {
-      maxWidth: cardWidth,
-      minHeight: 120,
-      margin: "10%",
+      maxHeight: cardHeight/2,
+      margin: "5%",
       marginBottom: "0%",
+      borderRadius: "6px"
     },
     title: {
-      fontSize: 20,
+      fontSize: 18,
       fontFamily: "Poppins",
       fontWeight: "bold",
       textAlign: "center",
-      color: "#ffffff",
+      color: "#1c1c1c",
     },
     info: {
       fontSize: 12,
       textAlign: "center",
-      margin: "5%",
-      color: "#e6e6e6",
+      margin: "2%",
+      color: "#1c1c1c",
+      opacity: ".5"
     },
   });
   const classes = useStyles();
   return (
-    <Tilt>
       <Card className={classes.root}>
-        <Link
-          className={classes.link}
-          to={!guestFilter ? `/${pathLink}` : "/explore"}
-        >
+      
           <CardActionArea
             className={classes.actionArea}
-            onClick={!guestFilter ? "" : notify}
           >
-            <CardMedia className={classes.media} image={image} title={title} />
+              <iframe className={classes.media} src="https://www.youtube.com/embed/b746_uGEtZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allownetworking="internal"
+
+allowfullscreen></iframe>
+            {/* <CardMedia  image={image} title={title} /> */}
 
             <CardContent>
               <Typography
                 className={classes.title}
-                style={{ whiteSpace: "pre-line" }}
               >
                 {title}
               </Typography>
               <Typography className={classes.info} color="textSecondary">
-                {`${n_testimonies} Testimonies | ${reading_time} min`}
+                { `${reading_time} mins`}
               </Typography>
             </CardContent>
           </CardActionArea>
-        </Link>
+        
       </Card>
-    </Tilt>
   );
 }
 
-export default ExploreCards;
+export default CourseCards;

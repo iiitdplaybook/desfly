@@ -3,7 +3,7 @@ import "./Course.css";
 import React, { useState } from "react";
 import { Button, GridList, GridListTile } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import itemsList from "../Utils/items";
+import itemsList from "./CourseItems";
 import Navbar from "../Navbar/Navbar";
 
 function Explore() {
@@ -49,7 +49,7 @@ function Explore() {
             clickedButton === 1 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          All
+          Course videos
         </Button>
         <Button
           onClick={() => changeS(2)}
@@ -58,7 +58,7 @@ function Explore() {
             clickedButton === 2 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          Recommended
+          Poster Redesign
         </Button>
         {/* <Button
           onClick={() => changeS(3)}
@@ -73,10 +73,16 @@ function Explore() {
 
       <div className="explore__body">
         {clickedButton === 1 ? (
-          <div className="cardsDiv">{itemCards["allCards"]}</div>
+          <>
+          <div className="contentDiv">{itemCards["Demo"]}</div>
+          <div className="contentDiv">{itemCards["Module1"]}</div>
+          </>
         ) : (
-          clickedButton ===
-          2(<div className="cardsDiv">{itemCards["recommendedCards"]}</div>)
+          <>
+          <img src="https://drive.google.com/file/d/1Xo83tnd-rSvcIY0yJxzzfAGc0i5HBAUl/view"></img>
+          <img src="https://drive.google.com/file/d/1Yi5Fp5IEcfOBOFKPBGZauRaCRBIXLGxo/view"></img>
+          </>
+          // <div className="cardsDiv">{itemCards["recommendedCards"]}</div>
         )}
         {/* //  : (
         //   <div className='cardsDiv'>{itemCards['favCards']}</div>

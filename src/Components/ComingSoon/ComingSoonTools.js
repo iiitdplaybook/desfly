@@ -3,7 +3,7 @@ import './ComingSoonTools.css';
 import Navbar from '../Navbar/Navbar';
 
 function ComingSoonTools() {
-  const description = 'Tools to make your college life easier and productive';
+  const description = 'Tools to make your design life easier and productive';
   return (
     <div className='div'>
       <Navbar loggedIn={true} colorStatus={true} />

@@ -199,7 +199,7 @@ function QnACard({ card, colors }) {
                     <IconContext.Provider value={{ color: "#3FADA8" }}>
                         <div className={classes.subtitle}>
                             <GoVerified style={{ marginRight: "5px" }} />
-                            Created by IIITDian
+                            Created by the community
                         </div>
                     </IconContext.Provider>
                 </DialogTitle>

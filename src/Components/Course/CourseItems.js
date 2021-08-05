@@ -1,5 +1,5 @@
 // import React from "react";
-import ExploreCards from "../ExploreCards/ExploreCards";
+import CourseCards from "./CourseCards";
 
 const imageTimeManagement =
   "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/timeManagement.svg";
@@ -8,7 +8,7 @@ const imageNostalgia =
 const imageOnlinesem =
   "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/onlineSem.svg";
 const imagePlacements =
-  "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/placements.svg";
+  "https://www.youtube.com/watch?v=b746_uGEtZg";
 const imageClubs =
   "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/clubs.svg";
 const imageProfproject =
@@ -29,8 +29,8 @@ function items() {
   const color1 = "#9F4EAD"; //purple
   const color2 = "#EEB86D"; //yellow
 
-  const color3 = "#2FB8FF"; //sea blue
-  const color4 = "#95E8DC"; //sea green
+  const color3 = "#fff"; //sea blue
+  const color4 = "#fff"; //sea green
 
   const color5 = "#9F7FE5"; //purple
   const color6 = "#5497E3"; //blue
@@ -47,8 +47,8 @@ function items() {
   const color13 = "#181C33"; //blackish
   const color14 = "#4F4181"; //blackish purple
 
-  const color15 = "#2587A6"; //dark turquoise
-  const color16 = "#6FF7E8"; //light turquoise
+  const color15 = "#FF6ABB"; //flywheel pink
+  const color16 = "#5522E3"; //flywheel purple
 
   const color17 = "#F57F36"; //light yellow
   const color18 = "#FFD78A"; //dark yellow
@@ -63,24 +63,95 @@ function items() {
   const guestVar = !localStorage.getItem("isSignedIn");
 
   const itemslist = {
+    Demo: [],
+    Module1: [],
     allCards: [],
-    recommendedCards: [],
-    favCards: [],
   };
 
+  const Demo = [
+    {
+      gradientColor_1: color3,
+      gradientColor_2: color4,
+      title: "\nDemo class",
+      n_testimonies: 14,
+      reading_time: 31,
+      image: imagePlacements,
+      pathLink: "https://www.youtube.com/watch?v=b746_uGEtZg",
+      opacity: 1,
+      guestFilter: false,
+    },
+    ];
+
+    const Module1 = [
+        {
+          gradientColor_1: color3,
+          gradientColor_2: color4,
+          title: "\nDesign Mindset Introduction",
+          n_testimonies: 14,
+          reading_time: 31,
+          image: imagePlacements,
+          pathLink: "https://www.youtube.com/watch?v=b746_uGEtZg",
+          opacity: 1,
+          guestFilter: guestVar,
+        },
+        {
+            gradientColor_1: color3,
+            gradientColor_2: color4,
+            title: "\nSetting up the system",
+            n_testimonies: 14,
+            reading_time: 31,
+            image: imagePlacements,
+            pathLink: "https://www.youtube.com/watch?v=b746_uGEtZg",
+            opacity: 1,
+            guestFilter: guestVar,
+          },
+          {
+            gradientColor_1: color3,
+            gradientColor_2: color4,
+            title: "\nCase studies",
+            n_testimonies: 14,
+            reading_time: 31,
+            image: imagePlacements,
+            pathLink: "https://www.youtube.com/watch?v=b746_uGEtZg",
+            opacity: 1,
+            guestFilter: guestVar,
+          },
+          {
+            gradientColor_1: color3,
+            gradientColor_2: color4,
+            title: "\nDesign Mindset Introduction",
+            n_testimonies: 14,
+            reading_time: 31,
+            image: imagePlacements,
+            pathLink: "https://www.youtube.com/watch?v=b746_uGEtZg",
+            opacity: 1,
+            guestFilter: guestVar,
+          },
+        ];
+
   const allCards = [
-    
-    // {
-    //   gradientColor_1: color1,
-    //   gradientColor_2: color2,
-    //   title: "\nNostalgia",
-    //   n_testimonies: 9,
-    //   reading_time: 5,
-    //   image: imageNostalgia,
-    //   pathLink: "nostalgia",
-    //   opacity: 1,
-    //   guestFilter: false,
-    // },
+    {
+      gradientColor_1: color15,
+      gradientColor_2: color16,
+      title: "\nDemo class",
+      n_testimonies: 14,
+      reading_time: 15,
+      image: imagePlacements,
+      pathLink: "internships",
+      opacity: 1,
+      guestFilter: guestVar,
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "\nNostalgia",
+      n_testimonies: 9,
+      reading_time: 5,
+      image: imageNostalgia,
+      pathLink: "nostalgia",
+      opacity: 1,
+      guestFilter: false,
+    },
     {
       gradientColor_1: color21,
       gradientColor_2: color22,
@@ -93,27 +164,16 @@ function items() {
       guestFilter: false,
     },
     {
-      gradientColor_1: color9,
-      gradientColor_2: color10,
-      title: "\nCourse",
+      gradientColor_1: color3,
+      gradientColor_2: color4,
+      title: "Time Management",
       n_testimonies: 6,
       reading_time: 3,
-      image: imageClubs,
-      pathLink: "course",
+      image: imageTimeManagement,
+      pathLink: "timemanagement",
       opacity: 1,
       guestFilter: guestVar,
     },
-    // {
-    //   gradientColor_1: color3,
-    //   gradientColor_2: color4,
-    //   title: "Time Management",
-    //   n_testimonies: 6,
-    //   reading_time: 3,
-    //   image: imageTimeManagement,
-    //   pathLink: "timemanagement",
-    //   opacity: 1,
-    //   guestFilter: guestVar,
-    // },
     {
       gradientColor_1: color13,
       gradientColor_2: color14,
@@ -125,23 +185,21 @@ function items() {
       opacity: 1,
       guestFilter: guestVar,
     },
-    // {
-    //   gradientColor_1: color5,
-    //   gradientColor_2: color6,
-    //   title: '\nOnline Sem Tips',
-    //   n_testimonies: 6,
-    //   reading_time: 3,
-    //   image: imageOnlinesem,
-    //   pathLink: 'explore',
-    //   opacity: opac,
-    //   guestFilter: guestVar,
-    // },
-
-  
+    {
+      gradientColor_1: color9,
+      gradientColor_2: color10,
+      title: "\nCourse",
+      n_testimonies: 6,
+      reading_time: 3,
+      image: imageClubs,
+      pathLink: "course",
+      opacity: 1,
+      guestFilter: guestVar,
+    },
     {
       gradientColor_1: color11,
       gradientColor_2: color12,
-      title: "Collaborate on Projects",
+      title: "Projects With Professors",
       n_testimonies: 6,
       reading_time: 3,
       image: imageProfproject,
@@ -150,20 +208,9 @@ function items() {
       guestFilter: guestVar,
     },
     {
-      gradientColor_1: color15,
-      gradientColor_2: color16,
-      title: "\nInternships",
-      n_testimonies: 14,
-      reading_time: 15,
-      image: imagePlacements,
-      pathLink: "explore",
-      opacity: opac,
-      guestFilter: guestVar,
-    },
-    {
       gradientColor_1: color17,
       gradientColor_2: color18,
-      title: "Beginner's \nQueries",
+      title: "Resolving \nQueries",
       n_testimonies: 6,
       reading_time: 3,
       image: imageQuery,
@@ -185,7 +232,7 @@ function items() {
     {
       gradientColor_1: color19,
       gradientColor_2: color20,
-      title: "\nCheatsheets",
+      title: "\nEntertainment",
       n_testimonies: 6,
       reading_time: 3,
       image: imageTimeManagement,
@@ -193,89 +240,33 @@ function items() {
       opacity: opac,
       guestFilter: guestVar,
     },
-    // {
-    //   gradientColor_1: color21,
-    //   gradientColor_2: color22,
-    //   title: "Talking to Friends or Seniors",
-    //   n_testimonies: 6,
-    //   reading_time: 3,
-    //   image: imageTimeManagement,
-    //   pathLink: "explore",
-    //   opacity: opac,
-    //   guestFilter: guestVar,
-    // },
-  ];
-
-  const recommendedCards = [
-    // {
-    //   gradientColor_1: color1,
-    //   gradientColor_2: color2,
-    //   title: "\nNostalgia",
-    //   n_testimonies: 6,
-    //   reading_time: 3,
-    //   image: imageNostalgia,
-    //   pathLink: "nostalgia",
-    //   opacity: 1,
-    //   guestFilter: false,
-    // },
-    // {
-    //   gradientColor_1: color3,
-    //   gradientColor_2: color4,
-    //   title: "Time Management",
-    //   n_testimonies: 6,
-    //   reading_time: 3,
-    //   image: imageTimeManagement,
-    //   pathLink: "timemanagement",
-    //   opacity: 1,
-    //   guestFilter: guestVar,
-    // },
     {
       gradientColor_1: color21,
       gradientColor_2: color22,
-      title: "\nQuick Bites",
-      n_testimonies: 8,
-      reading_time: 3,
-      image: qna,
-      pathLink: "quickbites",
-      opacity: 1,
-      guestFilter: false,
-    },
-    {
-      gradientColor_1: color9,
-      gradientColor_2: color10,
-      title: "\nCourse",
+      title: "Talking to Friends or Seniors",
       n_testimonies: 6,
       reading_time: 3,
-      image: imageClubs,
-      pathLink: "course",
-      opacity: 1,
+      image: imageTimeManagement,
+      pathLink: "explore",
+      opacity: opac,
       guestFilter: guestVar,
     },
   ];
 
-  const favCards = [
-    {
-      gradientColor_1: color1,
-      gradientColor_2: color2,
-      title: "\nNostalgia",
-      n_testimonies: 6,
-      reading_time: 3,
-      image: imageNostalgia,
-      pathLink: "nostalgia",
-      opacity: 1,
-      guestFilter: false,
-    },
-  ];
+
 
   for (let index = 0; index < allCards.length; index++) {
-    itemslist["allCards"].push(ExploreCards(allCards[index]));
+    itemslist["allCards"].push(CourseCards(allCards[index]));
   }
-  // for (let index = 0; index < favCards.length; index++) {
-  //   itemslist['favCards'].push(ExploreCards(favCards[index]));
-  // }
-  for (let index = 0; index < recommendedCards.length; index++) {
-    itemslist["recommendedCards"].push(ExploreCards(recommendedCards[index]));
+
+  for (let index = 0; index < Demo.length; index++) {
+    itemslist["Demo"].push(CourseCards(Demo[index]));
   }
+
+  for (let index = 0; index < Module1.length; index++) {
+    itemslist["Module1"].push(CourseCards(Module1[index]));
+  }
+
 
   return itemslist;
 }

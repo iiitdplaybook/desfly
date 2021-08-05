@@ -1,0 +1,11 @@
+.contentDiv {
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(24em, 1fr));
+    grid-template-rows: auto;
+    grid-auto-rows: 264.4px;
+    justify-items: center;
+    margin-bottom: 5%;
+  }
